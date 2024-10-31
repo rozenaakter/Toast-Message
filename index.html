@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Toast Message</title>
+    <style>
+        .toast {
+            visibility: hidden; /* ডিফল্টভাবে টোস্ট মেসেজটি লুকানো থাকে */
+            min-width: 250px;
+            margin-left: -125px;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            border-radius: 4px;
+            padding: 16px;
+            position: fixed;
+            z-index: 1;
+            left: 50%; /* স্ক্রিনের মাঝখানে সেট করা */
+            bottom: 30px; /* নিচে থেকে ৩০ পিক্সেল উপরে */
+            font-size: 17px;
+            opacity: 0;
+            transition: opacity 0.5s, visibility 0.5s; /* স্মুথ ট্রানজিশন */
+        }
+
+        .toast.show {
+            visibility: visible; /* টোস্ট মেসেজ দৃশ্যমান হয় */
+            opacity: 1; /* সম্পূর্ণ দেখা যায় */
+        }
+    </style>
+</head>
+<body>
+    <button id="showToastBtn">Show Toast</button> <!-- টোস্ট মেসেজ দেখানোর জন্য বোতাম -->
+
+    <div id="toastMessage" class="toast"></div> <!-- টোস্ট মেসেজের জন্য ডিভ -->
+
+    <script src="app.js"></script>
+</body>
+</html>
